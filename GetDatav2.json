@@ -1,0 +1,136 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : null,
+    "version" : "1.0.0",
+    "title" : null,
+    "termsOfService" : null,
+    "contact" : null,
+    "license" : null
+  },
+  "host" : "mcjfdlnbpvs8lj6lfcg3yssbczhy.rest.marketingcloudapis.com:443",
+  "basePath" : "/data/v1",
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/customobjectdata/key/Makers_Mark_Master/rowset" : {
+      "get" : {
+        "tags" : [ "GetDatav2" ],
+        "summary" : null,
+        "description" : null,
+        "operationId" : "GetDatav2",
+        "produces" : [ "application/json" ],
+        "consumes" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "$filter",
+          "in" : "query",
+          "description" : null,
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "$fields",
+          "in" : "query",
+          "description" : null,
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "$page",
+          "in" : "query",
+          "description" : null,
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "$pageSize",
+          "in" : "query",
+          "description" : null,
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/GetDatav2"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "GetDatav2##links" : {
+      "properties" : {
+        "self" : {
+          "type" : "string"
+        },
+        "next" : {
+          "type" : "string"
+        }
+      }
+    },
+    "GetDatav2##items##keys" : {
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        }
+      }
+    },
+    "GetDatav2##items##values" : {
+      "properties" : {
+        "first_name" : {
+          "type" : "string"
+        }
+      }
+    },
+    "GetDatav2##items" : {
+      "properties" : {
+        "keys" : {
+          "$ref" : "#/definitions/GetDatav2##items##keys"
+        },
+        "values" : {
+          "$ref" : "#/definitions/GetDatav2##items##values"
+        }
+      }
+    },
+    "GetDatav2" : {
+      "properties" : {
+        "links" : {
+          "$ref" : "#/definitions/GetDatav2##links"
+        },
+        "requestToken" : {
+          "type" : "string"
+        },
+        "tokenExpireDateUtc" : {
+          "type" : "string"
+        },
+        "customObjectId" : {
+          "type" : "string"
+        },
+        "customObjectKey" : {
+          "type" : "string"
+        },
+        "pageSize" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "page" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "count" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "top" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "items" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/GetDatav2##items"
+          }
+        }
+      }
+    }
+  }
+}
