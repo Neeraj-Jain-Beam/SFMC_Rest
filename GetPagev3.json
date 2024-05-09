@@ -1,0 +1,112 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : null,
+    "version" : "1.0.0",
+    "title" : null,
+    "termsOfService" : null,
+    "contact" : null,
+    "license" : null
+  },
+  "host" : "mcjfdlnbpvs8lj6lfcg3yssbczhy.rest.marketingcloudapis.com:443",
+  "basePath" : "/data/v1",
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/customobjectdata/key/Makers_Mark_Master/rowset" : {
+      "get" : {
+        "tags" : [ "GetPagev3" ],
+        "summary" : null,
+        "description" : null,
+        "operationId" : "GetPagev3",
+        "produces" : [ "application/json" ],
+        "consumes" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/GetPagev3"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "GetPagev3##links" : {
+      "properties" : {
+        "self" : {
+          "type" : "string"
+        },
+        "next" : {
+          "type" : "string"
+        }
+      }
+    },
+    "GetPagev3##items##keys" : {
+      "properties" : {
+        "id" : {
+          "type" : "string"
+        }
+      }
+    },
+    "GetPagev3##items##values" : {
+      "properties" : {
+        "first_name" : {
+          "type" : "string"
+        }
+      }
+    },
+    "GetPagev3##items" : {
+      "properties" : {
+        "keys" : {
+          "$ref" : "#/definitions/GetPagev3##items##keys"
+        },
+        "values" : {
+          "$ref" : "#/definitions/GetPagev3##items##values"
+        }
+      }
+    },
+    "GetPagev3" : {
+      "properties" : {
+        "links" : {
+          "$ref" : "#/definitions/GetPagev3##links"
+        },
+        "requestToken" : {
+          "type" : "string"
+        },
+        "tokenExpireDateUtc" : {
+          "type" : "string"
+        },
+        "customObjectId" : {
+          "type" : "string"
+        },
+        "customObjectKey" : {
+          "type" : "string"
+        },
+        "pageSize" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "page" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "count" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "top" : {
+          "type" : "number",
+          "format" : "int32"
+        },
+        "items" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/GetPagev3##items"
+          }
+        }
+      }
+    }
+  }
+}
